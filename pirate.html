@@ -54,7 +54,7 @@
 
   
 <div class="container" >
-  <div  class="game-location" onclick="check(5)"><img id="img5" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
+  <div    class="game-location" onclick="check(5)"><img id="img5" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
     <div  class="game-location" onclick="check(6)"><img id="img6" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
     <div  class="game-location" onclick="check(7)"><img id="img7" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
     <div  class="game-location" onclick="check(8)"><img id="img8" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
@@ -62,7 +62,7 @@
   </div>
 
 <div class="container" >
-  <div  class="game-location" onclick="check(10)"><img id="img10" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
+  <div    class="game-location" onclick="check(10)"><img id="img10" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
     <div  class="game-location" onclick="check(11)"><img id="img11" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
     <div  class="game-location" onclick="check(12)"><img id="img12" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
     <div  class="game-location" onclick="check(13)"><img id="img13" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
@@ -70,7 +70,7 @@
   </div>
 
 <div class="container" >
-  <div  class="game-location" onclick="check(15)"><img id="img15" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
+  <div    class="game-location" onclick="check(15)"><img id="img15" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
     <div  class="game-location" onclick="check(16)"><img id="img16" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
     <div  class="game-location" onclick="check(17)"><img id="img17" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
     <div  class="game-location" onclick="check(18)"><img id="img18" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
@@ -78,20 +78,20 @@
    </div>
 
 <div class="container" >
-  <div  class="game-location" onclick="check(20)"><img id="img20" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
+  <div    class="game-location" onclick="check(20)"><img id="img20" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
     <div  class="game-location" onclick="check(21)"><img class="img-game" id="img21" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
     <div  class="game-location" onclick="check(22)"><img class="img-game" id="img22" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
     <div  class="game-location" onclick="check(23)"><img class="img-game" id="img23" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
     <div  class="game-location" onclick="check(24)"><img class="img-game" id="img24" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
    </div>
   </div>
-
+  <p><input type="button" class="btn btn-warning" value="New Game" onClick="refresh(this)"></p>
    <script>
     var checkCount= 0;
     var penalty= 0;
     var lastCheck= 0;
-    var treasureLocation= 5;
-    var trapLocation=18;
+    var treasureLocation= Math.floor(Math.random()*(24-0)-0);;
+    var trapLocation=Math.floor(Math.random()*(24-0)-0);
     var gameOver= false;
     const ids= [
       "img0",
@@ -181,8 +181,9 @@
     document.getElementById("penalty").textContent = "Penalty: " + penalty;
     document.getElementById("help").textContent = helpMessage;
     }
-
-   
+    function refresh(){
+        window.location.reload("Refresh")
+      }
    </script>
 
 </body>
