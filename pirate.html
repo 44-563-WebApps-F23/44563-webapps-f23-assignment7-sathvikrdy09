@@ -1,72 +1,189 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Treasure page</title>
-        <style>
-            #locations,#penalty,#help{
-                text-align: center;
-            }
-            .container{
-                width: 70%;
-            }
-        </style>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
-          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
-          integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" 
-          integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-    </head>
-    <body>
-    <h1>Find the treasure by Sathvik</h1>
-    <div style="text-align: center;">Click on the location to search for treasure,beware the traps</div>
-    <div id="locations" style="color: aqua;">Number of locations checked is zero</div>
-    <div id="penalty" style="color: brown;">Penalty is zero</div>
-    <div style="text-align: center;">Click for help</div>
-    <div id="help" style="color: chartreuse;">Help</div><br>
+<html lang="en">
+<head>
+  <title>Pirate</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" 
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+<style>
+   body {
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+.game-location {
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+}
 
-    <div class="container">
-        <img class="img" src="file:///C:/Users/S566920/Pictures/treasure.jpg" alt="location" width="50px" height="50px">
-        <img class="img" src="file:///C:/Users/S566920/Pictures/treasure.jpg" alt="location" width="50px" height="50px">
-        <img class="img" src="file:///C:/Users/S566920/Pictures/treasure.jpg" alt="location" width="50px" height="50px">
-        <img class="img" src="file:///C:/Users/S566920/Pictures/treasure.jpg" alt="location" width="50px" height="50px">
-        <img class="img" src="file:///C:/Users/S566920/Pictures/treasure.jpg" alt="location" width="50px" height="50px">
-    </div>
+.game{
+  margin-bottom: 20px;
+}   
+.container{
+  display:flex;
 
-    <div class="container">
-        <img class="img" src="file:///C:/Users/S566920/Pictures/treasure.jpg" alt="location" width="50px" height="50px">
-        <img class="img" src="file:///C:/Users/S566920/Pictures/treasure.jpg" alt="location" width="50px" height="50px">
-        <img class="img" src="file:///C:/Users/S566920/Pictures/treasure.jpg" alt="location" width="50px" height="50px">
-        <img class="img" src="file:///C:/Users/S566920/Pictures/treasure.jpg" alt="location" width="50px" height="50px">
-        <img class="img" src="file:///C:/Users/S566920/Pictures/treasure.jpg" alt="location" width="50px" height="50px">
-    </div>
+}
 
-    <div class="container">
-        <img class="img" src="file:///C:/Users/S566920/Pictures/treasure.jpg" alt="location" width="50px" height="50px">
-        <img class="img" src="file:///C:/Users/S566920/Pictures/treasure.jpg" alt="location" width="50px" height="50px">
-        <img class="img" src="file:///C:/Users/S566920/Pictures/treasure.jpg" alt="location" width="50px" height="50px">
-        <img class="img" src="file:///C:/Users/S566920/Pictures/treasure.jpg" alt="location" width="50px" height="50px">
-        <img class="img" src="file:///C:/Users/S566920/Pictures/treasure.jpg" alt="location" width="50px" height="50px">
-    </div>
+</style>
+</head>
+<body>
+<h1 style="background-color:rgb(128, 235, 178); font-family: cursive; " >Find the treasure by Sathvik Reddy Cheruku </h1>
+<p style="background-color:rgb(158, 228, 216); font-family: Verdana, Geneva, Tahoma, sans-serif;" >Click on the locations to search for treasure, beware the traps</p>
+<p id="locations" style="background-color:rgb(146, 162, 223); font-style: oblique;" >Number of locations checked is zero.</p>
+<p id="penalty" style="background-color:rgb(217, 243, 157); font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Penalty is zero</p>
+<p type="button" style="background-color:rgb(215, 167, 235); font-style:oblique" onclick="help()" >Click for help</p>
+<p style="background-color:rgb(252, 162, 186); font-family: fantasy;" id="help">Help report</p>
 
-    <div class="container">
-        <img class="img" src="file:///C:/Users/S566920/Pictures/treasure.jpg" alt="location" width="50px" height="50px">
-        <img class="img" src="file:///C:/Users/S566920/Pictures/treasure.jpg" alt="location" width="50px" height="50px">
-        <img class="img" src="file:///C:/Users/S566920/Pictures/treasure.jpg" alt="location" width="50px" height="50px">
-        <img class="img" src="file:///C:/Users/S566920/Pictures/treasure.jpg" alt="location" width="50px" height="50px">
-        <img class="img" src="file:///C:/Users/S566920/Pictures/treasure.jpg" alt="location" width="50px" height="50px">
-    </div>
 
-    <div class="container">
-        <img class="img" src="file:///C:/Users/S566920/Pictures/treasure.jpg" alt="location" width="50px" height="50px">
-        <img class="img" src="file:///C:/Users/S566920/Pictures/treasure.jpg" alt="location" width="50px" height="50px">
-        <img class="img" src="file:///C:/Users/S566920/Pictures/treasure.jpg" alt="location" width="50px" height="50px">
-        <img class="img" src="file:///C:/Users/S566920/Pictures/treasure.jpg" alt="location" width="50px" height="50px">
-        <img class="img" src="file:///C:/Users/S566920/Pictures/treasure.jpg" alt="location" width="50px" height="50px">
-    </div>
-    </body>
+<div class="game" >
+<div class="container" >
+    <div  class="game-location" onclick="check(0)"><img id="img0" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
+    <div  class="game-location" onclick="check(1)"><img id="img1" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
+    <div  class="game-location" onclick="check(2)"><img id="img2" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
+    <div  class="game-location" onclick="check(3)"><img id="img3" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
+    <div  class="game-location" onclick="check(4)"><img id="img4" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
+  </div>
 
+  
+<div class="container" >
+  <div  class="game-location" onclick="check(5)"><img id="img5" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
+    <div  class="game-location" onclick="check(6)"><img id="img6" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
+    <div  class="game-location" onclick="check(7)"><img id="img7" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
+    <div  class="game-location" onclick="check(8)"><img id="img8" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
+    <div  class="game-location" onclick="check(9)"><img id="img9" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
+  </div>
+
+<div class="container" >
+  <div  class="game-location" onclick="check(10)"><img id="img10" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
+    <div  class="game-location" onclick="check(11)"><img id="img11" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
+    <div  class="game-location" onclick="check(12)"><img id="img12" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
+    <div  class="game-location" onclick="check(13)"><img id="img13" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
+    <div  class="game-location" onclick="check(14)"><img id="img14" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
+  </div>
+
+<div class="container" >
+  <div  class="game-location" onclick="check(15)"><img id="img15" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
+    <div  class="game-location" onclick="check(16)"><img id="img16" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
+    <div  class="game-location" onclick="check(17)"><img id="img17" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
+    <div  class="game-location" onclick="check(18)"><img id="img18" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
+    <div  class="game-location" onclick="check(19)"><img id="img19" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
+   </div>
+
+<div class="container" >
+  <div  class="game-location" onclick="check(20)"><img id="img20" class="img-game" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
+    <div  class="game-location" onclick="check(21)"><img class="img-game" id="img21" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
+    <div  class="game-location" onclick="check(22)"><img class="img-game" id="img22" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
+    <div  class="game-location" onclick="check(23)"><img class="img-game" id="img23" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
+    <div  class="game-location" onclick="check(24)"><img class="img-game" id="img24" src="file:///C:/Users/S566920/Pictures/tre.webp" alt="location" height="60px" width="60px"></div>
+   </div>
+  </div>
+
+   <script>
+    var checkCount= 0;
+    var penalty= 0;
+    var lastCheck= 0;
+    var treasureLocation= 5;
+    var trapLocation=18;
+    var gameOver= false;
+    const ids= [
+      "img0",
+      "img1",
+      "img2",
+      "img3",
+      "img4",
+      "img5",
+      "img6",
+      "img7",
+      "img8",
+      "img9",
+      "img10",
+      "img11",
+      "img12",
+      "img13",
+      "img14",
+      "img15",
+      "img16",
+      "img17",
+      "img18",
+      "img19",
+      "img20",
+      "img21",
+      "img22",
+      "img23",
+      "img24",
+    ];
+
+    function check(position){
+      if(gameOver){
+        return;
+      }
+
+      var image= ids[position];
+
+      var imageElement = document.getElementById(image);
+
+      if(position === treasureLocation){
+        imageElement.src = "file:///C:/Users/S566920/Pictures/treasure.jpg";
+        checkCount++;
+        penalty++;
+        document.getElementById("locations").textContent="Location Checked: " + checkCount;
+        gameOver= true;
+        penalty -=3;
+      }
+      else if(position === trapLocation) {
+        imageElement.src="file:///C:/Users/S566920/Pictures/trp.jpg";
+        checkCount++;
+        penalty++;
+        document.getElementById("locations").textContent="Location Checked: " + checkCount;
+        gameOver = true;
+        penalty +=4;
+      }
+      else{
+        imageElement.src="file:///C:/Users/S566920/Pictures/pir.png";
+        checkCount++;
+        penalty++;
+        document.getElementById("locations").textContent="Location Checked: " + checkCount;
+
+      }
+      document.getElementById("penalty").textContent="Penalty: " + penalty;
+      lastCheck=position;
+    }
+
+    function help(){
+     var treasureRow=Math.floor(treasureLocation/5);
+    
+      var treasureColumn=Math.floor(treasureLocation%5)
+      var lastRow = Math.floor(lastCheck / 5);
+    var lastCol = Math.floor(lastCheck % 5);
+    
+    var rowDiff = Math.abs(treasureRow-lastRow);
+    var colDiff = Math.abs(treasureColumn-lastCol);
+    var helpMessage = "";
+
+    if ((rowDiff <= 1 && colDiff <= 1) && !(rowDiff === 1 && colDiff === 1)) {
+        helpMessage = "Can smell it";
+        penalty += 2;
+    } else if (rowDiff + colDiff === 2) {
+        helpMessage = "Close Matie";
+        penalty += 2;
+    } else {
+        helpMessage = "Step Faster";
+        penalty += 2;
+    }
+    document.getElementById("penalty").textContent = "Penalty: " + penalty;
+    document.getElementById("help").textContent = helpMessage;
+    }
+
+   
+   </script>
+
+</body>
 </html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>React</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+  <h2>Sathvik Reddy Cheruku speed check</h2>
+
+  <div id="target">Your time</div>
+  <div id="counter">Count</div>
+
+  <button type="button"class="btn btn-primary"onclick="startTime()">Start Timer</button>
+
+  <button type="button"class="btn btn-primary" onclick="recordTime()"> React</button>
+  
+  <script> 
+  var reactTime="";
+  function recordTime() {
+    reactTime= Date.now();
+    console.log(reactTime);
+   let x=Math.floor(Math.random()*(11-2)+2);
+   let y=x*1000;
+  }
+
+  function startTime(){
+   for (var i=0; i<9;i++){
+    setTimeout(function(count){
+        return function(){
+        document.getElementById("counter").innerHTML= "count: "+ count;
+        };
+    }(x-i), i*1000);
+   }
+   setTimeout(
+     function(){
+        if(reactTime==""){
+            document.getElementById("target").innerHTML="Too Slow";
+        }
+        else{
+            var endTime = Date.now();
+            var timeElapsed =endTime- reactTime;
+            document.getElementById("target").innerHTML= "Time was: "+ timeElapsed;
+        }
+    },y);
+
+}
+  </script>
+
+</body>
+</html>
